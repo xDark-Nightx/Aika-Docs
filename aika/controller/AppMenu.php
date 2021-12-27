@@ -12,8 +12,8 @@ class AppMenu{
     private $session;
 
     private $items;
-    private int $itemId;
-    private int $itemType; /* 1: Types | 2: Packets */
+    private $itemId;
+    private $itemType; /* 1: Types | 2: Packets */
 
     public function __construct(){
         $this->session = Session::GetInstance();
