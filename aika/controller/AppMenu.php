@@ -39,7 +39,7 @@ class AppMenu{
 
         try{
             $result = $this->session->db->select(
-                "SELECT * FROM Types WHERE `Status` > 0"
+                "SELECT * FROM `Types` WHERE `Status` > 0"
             );
     
             if ($result === false || empty($result)){
@@ -56,7 +56,7 @@ class AppMenu{
     }
 
     public function Render(){
-        var_dump($this->items['Types']);
+        //var_dump($this->items['Types']);
     }
 }
 
