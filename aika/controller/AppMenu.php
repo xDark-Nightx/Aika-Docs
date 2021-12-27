@@ -29,7 +29,4 @@ class AppMenu{
     }
 }
 
-$appMenu = new AppMenu();
-$appMenu->Render();
-
 ?>

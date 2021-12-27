@@ -1,3 +1,9 @@
+<?
+
+require_once("controller/AppMenu.php");
+
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -21,7 +27,8 @@
                 <div class='border w-100 h-100'>
                     <?
                     
-                    require_once("controller/AppMenu.php");
+                    $appMenu = new AppMenu();
+                    $appMenu->Render();
 
                     ?>
                     <div class="menu-category p-0 m-0">

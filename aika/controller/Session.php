@@ -6,7 +6,7 @@ if (empty(session_id()) || !session_id()){
     session_start();
 }
 
-require_once("DataBase.php");
+require_once("Database.php");
 
 class Session {
     public $db;
