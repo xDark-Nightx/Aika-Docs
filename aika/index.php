@@ -2,8 +2,6 @@
 
 require_once("controller/AppMenu.php");
 
-use Aika\Controller;
-
 ?>
 
 <!doctype html>
@@ -29,7 +27,7 @@ use Aika\Controller;
                 <div class='border w-100 h-100'>
                     <?
                     
-                    $appMenu = new AppMenu();
+                    $appMenu = new Aika\Controller\AppMenu();
                     $appMenu->Render();
 
                     ?>
