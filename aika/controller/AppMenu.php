@@ -12,6 +12,8 @@ class AppMenu{
     private $session;
 
     private $items;
+    private int $itemId;
+    private int $itemType; /* 1: Types | 2: Packets */
 
     public function __construct(){
         $this->session = Session::GetInstance();
@@ -19,13 +21,42 @@ class AppMenu{
     }
 
     private function initializeContent(){
-        $result = $this->session->db->select(
-            "SELECT * FROM Types WHERE `Status` > 0"
-        );
+        $id = $_GET['Id'] ?? false;
+
+        if (!is_numeric($id)){
+            $id = false;
+        }
+
+        $this->itemId = $id;
+
+        $typeId = $_GET['Type'] ?? false;
+
+        if (!is_numeric($typeId)){
+            $typeId = false;
+        }
+
+        $this->itemType = $typeId;
+
+        try{
+            $result = $this->session->db->select(
+                "SELECT * FROM Types WHERE `Status` > 0"
+            );
+    
+            if ($result === false || empty($result)){
+                $this->items['Types'] = false;
+            } else {
+                $this->items['Types'] = $result;
+            }
+        } catch(Exception $exception){
+            $this->items['Types'] = false;
+            return;
+        }
+
+        
     }
 
     public function Render(){
-        print "";
+        var_dump($this->items['Types']);
     }
 }
 
