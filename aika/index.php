@@ -2,6 +2,8 @@
 
 require_once("controller/AppMenu.php");
 
+use Aika\Controller;
+
 ?>
 
 <!doctype html>
